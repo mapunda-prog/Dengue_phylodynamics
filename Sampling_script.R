@@ -44,3 +44,4 @@ print(table(final_sampled_sequences$Country, final_sampled_sequences$source))
 #create a table of accession numbers to download
 Accessions <- final_sampled_sequences %>% select(Accession)
  export(Accessions, "data/Accessions.txt")
+export(final_sampled_sequences, "metadata.csv")
