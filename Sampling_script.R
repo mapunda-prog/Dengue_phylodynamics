@@ -45,3 +45,11 @@ print(table(final_sampled_sequences$Country, final_sampled_sequences$source))
 Accessions <- final_sampled_sequences %>% select(Accession)
  export(Accessions, "data/Accessions.txt")
 export(final_sampled_sequences, "metadata.csv")
+
+#creating metadata for sequences that are in the final pyhlogenetic tree
+tree_seqs <- import("data/sample_IDs.xlsx")
+
+extracted_metadata <- final_sampled_sequences[final_sampled_sequences$Accession %in% tree_seqs, ]
+
+
+
